@@ -502,9 +502,7 @@ void CS60MapsAppUi::InternalizeL(RReadStream& aStream)
 		CleanupStack::PopAndDestroy(2, msgFmt);
 		
 		
-		///////////////////////
-		//iSettings->iTileCacheDrive = EDriveC;
-		//////////////////////
+		//iSettings->ResetTileCacheDriveToDefault();
 		}
 	
 	DEBUG(_L("Settings reading ended"));

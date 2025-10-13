@@ -105,7 +105,7 @@ CAknSettingItem* CSettingsListBox::CreateSettingItemL(TInt aSettingId)
 			// reset drive to default value if it unavailable
 			if (/*isVisible &&*/ !FileUtils::IsDriveWritable(iEikonEnv->Static()->FsSession(), appUi->Settings()->iTileCacheDrive))
 				{
-				appUi->Settings()->iTileCacheDrive = EDriveC;
+				appUi->Settings()->ResetTileCacheDriveToDefault();
 				}
 			
 			TInt* ptr = reinterpret_cast<TInt*>(&appUi->Settings()->iTileCacheDrive); // TDriveNumber& --> TInt&
@@ -193,7 +193,7 @@ void CSettingsListBox::EditItemL(TInt aIndex, TBool aCalledFromMenu)
 				// reset drive to default value if it unavailable
 				if (isVisible && !FileUtils::IsDriveWritable(iEikonEnv->Static()->FsSession(), appUi->Settings()->iTileCacheDrive))
 					{
-					appUi->Settings()->iTileCacheDrive = EDriveC;
+					appUi->Settings()->ResetTileCacheDriveToDefault();
 					SettingItemById(ESettingTileCacheDrive)->LoadL();
 					}
 				
